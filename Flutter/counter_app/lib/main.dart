@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Counter App'),
     );
   }
 }
@@ -35,33 +35,60 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _resetCounter() {
+    setState(() {
+      _counter = 0;
+    });
+  }
+  
+  Widget textSection(String text) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: 28,
+      ),
+    );
+  }
+
+  Widget commandSection() {
+    
+    return  Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+          TextButton(
+            onPressed: _incrementCounter, 
+            child: Text(
+              "Add"
+            ),
+          ),
+          TextButton(
+            onPressed: _resetCounter, 
+            child: Text(
+              "Reset"
+            ),
+          )
+        ] 
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-   
     return Scaffold(
       appBar: AppBar(
-       
         title: Text(widget.title),
       ),
       body: Center(
-       
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            textSection('You have pressed the button :'),
+            textSection('$_counter' + " time(s)"),
+            SizedBox(height: 10,),
+            commandSection(),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }
