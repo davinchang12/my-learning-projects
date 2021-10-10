@@ -1,4 +1,4 @@
-# submission_dicoding
+# Simple E Commerce
 
 A new Flutter project.
 
