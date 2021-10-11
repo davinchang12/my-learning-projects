@@ -6,13 +6,12 @@ class Hangman():
         """
         Initialze class
         """
-
         self.guess_word = ["dog", "cat", "house", "film", "car", "planet", "bicycle", "laptop"]
         self.word = random.choice(self.guess_word)
+        self.correct_ans = self.word
         self.length = len(self.word)
         self.display = "_" * self.length
         self.guessed_word = []
-        self.play_game = ""
         
         self.count = 0
         self.limit = 5
@@ -25,14 +24,21 @@ class Hangman():
         If player answer no, the game will stop and quit.
         """
 
-        self.play_game = input("Do you want to play again? [y]Yes / [n]No\n")
+        play_game = input("Do you want to play again? [y]Yes / [n]No : ")
         
-        while self.play_game not in ["Y", "y", "N", "n"]: # Check if user gives wrong input
-            self.play_game = input("Do you want to play again? [y]Yes / [n]No\n")
+        while play_game not in ["Y", "y", "N", "n"]: # Check if user gives wrong input
+            play_game = input("Do you want to play again? [y]Yes / [n]No : ")
         
-        if self.play_game in ["Y", "y"]:
+        if play_game in ["Y", "y"]:
+            self.word = random.choice(self.guess_word)
+            self.correct_ans = self.word
+            self.length = len(self.word)
+            self.display = "_" * self.length
+            self.guessed_word = []
+            
+            self.count = 0
             self.play()
-        elif self.play_game in ["N", "n"]:
+        elif play_game in ["N", "n"]:
             print("Thanks for playing !")
             exit()
 
@@ -46,16 +52,15 @@ class Hangman():
         """
         Play hangman game.
         """
-        guess = input("Guess the word : " + self.display + "\nHint:" + self.length + " word(s).\nEnter your guess : ").strip()
-        if (len(guess == 0) or len(guess >= 2) or (guess <= 9)):
+        guess = input("Guess the word : " + self.display + "\nHint: " + str(self.length) + " word(s).\n\nEnter your guess : ").strip()
+        if (len(guess) == 0 or len(guess) >= 2 or (guess) <= "9"):
             print("Invalid input, try a letter!")
             self.play()
         elif guess in self.word:
             self.guessed_word.extend([guess])
             index = self.word.find(guess)
             self.word = self.word[:index] + "_" + self.word[index + 1:]
-            self.display = self.display[:index] + "_" + self.display[index + 1:]
-            print(self.display + "\n")
+            self.display = self.display[:index] + guess + self.display[index + 1:]
         elif guess in self.guessed_word:
             print("Try another letter.\n")
         else:
@@ -115,5 +120,11 @@ class Hangman():
                     "  |    / \ \n"
                     "__|__\n")
                 print("Wrong guess. You are hanged!!!\n")
-                print("The word was: ", self.already_guessed, self.word)
-                self.play_loop()
+                print("The word was: " + self.correct_ans)
+                self.play_again()
+
+        if (self.word == "_" * self.length):
+            print("Congratulations! You have guessed the word correctly")
+            self.play_again()
+        elif (self.count != self.limit):
+            self.play()
