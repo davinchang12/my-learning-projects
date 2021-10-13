@@ -6,15 +6,27 @@ class RPS:
         self.computer_choice = random.choice(self.choices)
 
     def set_player_choice(self):
+        """
+        Set player choice
+        """
         pass
 
     def win(self):
-        pass
+        """
+        Return win message
+        """
+        return "You win!"
 
     def lose(self):
-        pass
+        """
+        Return lose message
+        """
+        return "You lose!"
 
     def check(self, player_choice):
+        """
+        Check if player have winning / losing choice
+        """
         if(player_choice == "rock" and self.computer_choice == "paper"):
             self.lose()
         elif(player_choice == "rock" and self.computer_choice == "scissors"):
@@ -29,5 +41,8 @@ class RPS:
             self.win()
 
     def play_again(self):
+        """
+        Play the game again
+        """
         pass
 
