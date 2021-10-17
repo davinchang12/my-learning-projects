@@ -1,4 +1,4 @@
-package com.example.counter_app_restapi
+package com.example.login_register
 
 import io.flutter.embedding.android.FlutterActivity
 

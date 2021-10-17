@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.counter_app_restapi">
+    package="com.example.login_register">
    <application
-        android:label="counter_app_restapi"
+        android:label="login_register"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

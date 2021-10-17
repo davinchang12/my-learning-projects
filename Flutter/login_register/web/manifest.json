@@ -1,6 +1,6 @@
 {
-    "name": "counter_app_restapi",
-    "short_name": "counter_app_restapi",
+    "name": "login_register",
+    "short_name": "login_register",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

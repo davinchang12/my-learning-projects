@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,9 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
     });
-
-    //TODO save data
-    _saveData(new Todo(false, "Todo $_counter"));
   }
 
   @override
@@ -66,27 +61,5 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ),
     );
-  }
-}
-
-const jsonCodec = const JsonCodec();
-
-void _saveData(Todo todo) {
-  var json = jsonCodec.encode(todo);
-  print("json=$json");
-
-}
-
-class Todo{
-  bool finished;
-  String name;
-
-  Todo(this.finished, this.name);
-
-  Map toJson(){
-    return {
-      "finished" : finished,
-      "name" : name
-    };
   }
 }
