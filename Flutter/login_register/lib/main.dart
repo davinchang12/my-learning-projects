@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           create: (_) => AuthenticationService(FirebaseAuth.instance),
         ),
         StreamProvider(
-          create: (context) => context.read<AuthenticationService>().authStateChanges
+          create: (context) => context.read<AuthenticationService>().authStateChanges,
         ),
       ],
       child: MaterialApp(
@@ -41,7 +41,7 @@ class AuthenticationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();
-    
+      
     if(firebaseUser != null) {
       return HomePage();
     }
