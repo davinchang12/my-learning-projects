@@ -15,10 +15,19 @@ dice = [
     'img\dice6.png'
 ]
 
-DiceImage = ImageTk.PhotoImage(Image.open(r'img\dice6.png'))
+DiceImage = ImageTk.PhotoImage(Image.open(random.choice(dice)))
 ImageLabel = tkinter.Label(root, image=DiceImage)
 ImageLabel.image = DiceImage
 
 ImageLabel.pack(expand=True)
+
+def rolling_dice():
+    DiceImage = ImageTk.PhotoImage(Image.open(random.choice(dice)))
+    ImageLabel.configure(image=DiceImage)
+    ImageLabel.image = DiceImage
+
+button = tkinter.Button(root, text="Roll the dice", fg="blue", command=rolling_dice)
+
+button.pack()
 
 root.mainloop()
