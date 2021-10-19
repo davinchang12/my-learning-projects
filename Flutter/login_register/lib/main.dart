@@ -22,12 +22,13 @@ class MyApp extends StatelessWidget {
         ),
         StreamProvider(
           create: (context) => context.read<AuthenticationService>().authStateChanges,
-        ),
+        )
       ],
       child: MaterialApp(
-        title: 'Login Register',
+        title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: AuthenticationWrapper(),
       ),
@@ -36,12 +37,11 @@ class MyApp extends StatelessWidget {
 }
 
 class AuthenticationWrapper extends StatelessWidget {
-  const AuthenticationWrapper({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();
-    if(firebaseUser != null) {
+
+    if (firebaseUser != null) {
       return HomePage();
     }
     return SignInPage();
