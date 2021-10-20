@@ -26,9 +26,13 @@ def hough_lines(img, rho, theta, threshold, min_line_len, max_line_gap):
 
     Applying Hough Transform
     """
-    pass
+    # Convert pixels to line
+    lines = cv2.HoughLinesP(img, rho, theta, threshold, np.array([]), minLineLength=min_line_len, maxLineGap=max_line_gap)
+    line_img = np.zeros((img.shape[0], img.shape[1], 3), dtype=np.uint8)
+    lines_drawn(line_img, lines)
+    return line_img
 
-def lines_drawing(img, lines, color=[255, 0, 0], thickness=6):
+def lines_drawn(img, lines, color=[255, 0, 0], thickness=6):
     """
     Create two lines in each frame
     """
