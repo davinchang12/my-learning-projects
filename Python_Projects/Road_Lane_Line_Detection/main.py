@@ -120,7 +120,7 @@ def weighted_img(img, initial_img, alpha=0.8, beta=1., lamb=0.):
     """
     Return weighted image
     """
-    pass
+    return cv2.addWeigthed(initial_img, alpha, img, beta, lamb)
 
 def process_image(image):
     """
