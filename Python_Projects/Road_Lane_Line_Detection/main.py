@@ -12,7 +12,13 @@ def interested_region(img, vertices):
 
     Applying frame masking and find region of interest
     """
-    pass
+    if(len(img.shape) > 2): # Check if image is grayscale or not
+        mask_color_ignore = (255,) * img.shape[2]
+    else:
+        mask_color_ignore = 255
+
+    cv2.fillPoly(np.zeros_like(img), vertices, mask_color_ignore)
+    return cv2.bitwise_and(img, np.zeros_like(img)) # return merged img of roi
 
 def hough_lines(img, rho, theta, threshold, min_line_len, max_line_gap):
     """
