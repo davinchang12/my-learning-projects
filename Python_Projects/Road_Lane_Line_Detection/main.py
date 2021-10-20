@@ -1,8 +1,6 @@
 import numpy as np
 import cv2
 
-from numpy.core.defchararray import lower
-
 def interested_region(img, vertices):
     """
     Return ROI
