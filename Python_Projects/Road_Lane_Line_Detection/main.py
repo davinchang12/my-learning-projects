@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+from moviepy.editor import VideoFileClip
 
 def interested_region(img, vertices):
     """
@@ -153,4 +154,9 @@ def process_image(image):
     
     return result
 
-
+if __name__ == "__main__":
+    first_frame = 1
+    white_output = "vid/output.mp4"
+    clip1 = VideoFileClip("vid/input.mp4")
+    white_clip = clip1.fl_image(process_image)
+    white_clip.write_videofile(white_output, audio=False)
