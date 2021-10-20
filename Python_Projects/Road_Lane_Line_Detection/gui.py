@@ -52,4 +52,21 @@ def show_vid2():
         lmain2.configure(image=imgtk2)
         lmain2.after(10, show_vid)
 
+if __name__ == "__main__":
+    root = tk.Tk()
+    lmain = tk.Label(master=root)
+    lmain2 = tk.Label(master=root)
 
+    lmain.pack(side=LEFT)
+    lmain2.pack(side=RIGHT)
+
+    root.title("Road Lane Line Detection")
+    root.geometry("900x700+100+10")
+    exitbutton = Button(root, text="Quit", fg="red", command=root.destroy).pack(side=BOTTOM)
+
+    show_vid()
+    show_vid2()
+
+    root.mainloop()
+    cap1.release()
+    cap2.release()
