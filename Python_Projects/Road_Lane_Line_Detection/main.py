@@ -1,3 +1,6 @@
+# This is only detect a image.
+# You can use this for future improvements for detecting videos.
+
 import numpy as np
 import cv2
 
