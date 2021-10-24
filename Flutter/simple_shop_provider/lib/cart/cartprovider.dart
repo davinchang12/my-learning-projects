@@ -9,8 +9,12 @@ class CartProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // TODO 1 : delete item cart
   void delItemCart(String id) {
-    
+    itemCart.removeWhere((element) => element.id == id);
   }
+
+  int getTotalPrice() {
+    return itemCart.fold(0, (previous, current) => previous + current.price);
+  }
+
 }
