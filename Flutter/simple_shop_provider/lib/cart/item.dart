@@ -5,7 +5,7 @@ class Item {
 
   Item(this.id, this.name, this.price);
 
-  List<Item> itemShop = [
+  static var itemShop = [
     Item("1", "Item 1", 100),
     Item("2", "Item 2", 100),
     Item("3", "Item 3", 100),
