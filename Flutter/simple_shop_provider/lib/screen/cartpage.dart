@@ -60,8 +60,8 @@ class CartPage extends StatelessWidget {
               ),
               TextButton(
                   onPressed: () {
-                    final snackBar = SnackBar(
-                      content: const Text('Item checked out'),
+                    const snackBar = SnackBar(
+                      content: Text('Item checked out'),
                     );
 
                     // Find the ScaffoldMessenger in the widget tree
