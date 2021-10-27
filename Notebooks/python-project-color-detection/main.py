@@ -2,8 +2,16 @@ import cv2
 import pandas as pd
 import numpy as np
 
-def draw_function():
-    pass
+def draw_function(event, x, y, flags, param):
+    if event == cv2.EVENT_LBUTTONDBLCLK:
+        global b, g, r, xpos, ypos, clicked
+        clicked = True
+        xpos = x
+        ypos = y
+        b,g,r = img[y,x]
+        b = int(b)
+        g = int(g)
+        r = int(r)
 
 img_path = 'img/colorpic.jpg'
 img = cv2.imread(img_path)
