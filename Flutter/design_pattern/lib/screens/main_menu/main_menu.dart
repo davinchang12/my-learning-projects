@@ -11,6 +11,8 @@ import 'package:design_pattern/screens/main_menu/widgets/main_menu_header.dart';
 class MainMenu extends StatelessWidget {
   final DesignPatternCategoriesRepository repository = DesignPatternCategoriesRepository();
 
+  MainMenu({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
