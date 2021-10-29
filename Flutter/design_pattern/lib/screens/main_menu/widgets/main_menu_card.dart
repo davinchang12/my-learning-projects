@@ -28,7 +28,7 @@ class MainMenuCard extends StatelessWidget {
           ),
     );
 
-    Future<Object?> onSelectionCardTap() => Navigator.pushNamed(
+    onSelectionCardTap() => Navigator.pushNamed(
           context,
           categoryRoute,
           arguments: category,
