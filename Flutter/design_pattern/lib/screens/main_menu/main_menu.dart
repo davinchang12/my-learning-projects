@@ -16,13 +16,13 @@ class MainMenu extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(paddingL),
           child: Column(
             children: [
-              MainMenuHeader(), 
+              const MainMenuHeader(), 
               FutureBuilder<List<DesignPatternCategory>>(
                 future: repository.get(),
-                initialData: [],
+                initialData: const [],
                 builder: (
                   _, 
                   snapshot,
@@ -32,6 +32,7 @@ class MainMenu extends StatelessWidget {
                       children: [
                         for (var category in snapshot.data!) 
                           Container(
+                            margin: const EdgeInsets.only(top: marginL),
                             child: MainMenuCard(
                               category: category,
                             ),
