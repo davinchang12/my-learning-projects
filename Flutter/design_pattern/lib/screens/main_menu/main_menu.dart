@@ -18,6 +18,7 @@ class MainMenu extends StatelessWidget {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(paddingL),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const MainMenuHeader(), 
               FutureBuilder<List<DesignPatternCategory>>(
