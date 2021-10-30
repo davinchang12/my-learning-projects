@@ -9,6 +9,12 @@
                 "title": "Introduction",
                 "description": "Laborum qui ea velit sint officia culpa aute ad sint fugiat excepteur ex pariatur consectetur.",
                 "route": "/introduction"
+            },
+            {
+                "id": "chapter_1",
+                "title": "Chapter 1",
+                "description": "Laborum qui ea velit sint officia culpa aute ad sint fugiat excepteur ex pariatur consectetur.",
+                "route": "/chapter_1"
             }
         ]
     },
