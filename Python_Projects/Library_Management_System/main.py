@@ -16,6 +16,7 @@ CREATE TABLE tblBooksIssued(
     issuedto VARCHAR(30)
 );
 """
+from resources.app_view import *
 
 from tkinter import *
 from PIL import ImageTk,Image #PIL -> Pillow
@@ -25,6 +26,7 @@ from addbook import *
 from deletebook import *
 from viewbook import *
 from issuebook import *
+from returnbook import *
 
 db_pass = ""
 db_user = "root"
@@ -59,10 +61,12 @@ Canvas1.create_image(300, 340, image = img)
 Canvas1.config(bg="white", width=newImageSizeWidth, height=newImageSizeHeight)
 Canvas1.pack(expand=True, fill=BOTH)
 
-headingFrame1 = Frame(root, bg="#FFBB00", bd=5)
-headingFrame1.place(relx=0.2, rely=0.1, relwidth=0.6, relheight=0.16)
-headingLabel = Label(headingFrame1, text="Local Library", bg="black", fg="white", font=("Courier", 15))
-headingLabel.place(relx=0, rely=0, relwidth=1, relheight=1)
+header(root, "Local Library")
+button(root, "Add book details", addBook, 0.28, 0.4)
+button(root, "Delete book", deleteBook, 0.28, 0.5)
+button(root, "View book list", viewBook, 0.28, 0.6)
+button(root, "Issue book to Student", issueBook, 0.28, 0.7)
+button(root, "Return book", returnBook, 0.28, 0.8)
 
 root.mainloop()
 
