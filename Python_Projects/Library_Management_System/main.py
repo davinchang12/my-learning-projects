@@ -59,5 +59,10 @@ Canvas1.create_image(300, 340, image = img)
 Canvas1.config(bg="white", width=newImageSizeWidth, height=newImageSizeHeight)
 Canvas1.pack(expand=True, fill=BOTH)
 
+headingFrame1 = Frame(root, bg="#FFBB00", bd=5)
+headingFrame1.place(relx=0.2, rely=0.1, relwidth=0.6, relheight=0.16)
+headingLabel = Label(headingFrame1, text="Local Library", bg="black", fg="white", font=("Courier", 15))
+headingLabel.place(relx=0, rely=0, relwidth=1, relheight=1)
+
 root.mainloop()
 
