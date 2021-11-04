@@ -39,5 +39,25 @@ root = Tk()
 root.title("Library")
 root.minsize(width=400, height=400)
 root.geometry("600x500")
+
+same = True
+n = 0.25
+# Adding a background image
+background_image = Image.open("img/lib.jpg")
+[imageSizeWidth, imageSizeHeight] = background_image.size
+
+newImageSizeWidth = int(imageSizeWidth * n)
+if same :
+    newImageSizeHeight = int(imageSizeHeight * n)
+else :
+    newImageSizeHeight = int(imageSizeHeight / n)
+
+background_image = background_image.resize((newImageSizeWidth, newImageSizeHeight), Image.ANTIALIAS)
+img = ImageTk.PhotoImage(background_image)
+Canvas1 = Canvas(root)
+Canvas1.create_image(300, 340, image = img)
+Canvas1.config(bg="white", width=newImageSizeWidth, height=newImageSizeHeight)
+Canvas1.pack(expand=True, fill=BOTH)
+
 root.mainloop()
 
