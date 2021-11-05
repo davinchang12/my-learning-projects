@@ -27,14 +27,14 @@ def addBook():
     book4 = entryBox(labelFrame, 0.3, 0.65)
 
     # Submit Button
-    button(root, "SUBMIT", '#d1ccc0', 'black', 0.18, 0.08, lambda: bookRegister(book1, book2, book3, book4), 0.28, 0.9)
+    button(root, "SUBMIT", '#d1ccc0', 'black', 0.18, 0.08, lambda: bookRegister(root, book1, book2, book3, book4), 0.28, 0.9)
 
     # Quit Button
     button(root, "QUIT", '#f7f1e3', 'black', 0.18, 0.08, root.destroy, 0.53, 0.9)
 
     root.mainloop()
 
-def bookRegister(book1, book2, book3, book4):
+def bookRegister(root, book1, book2, book3, book4):
     bid = book1.get()
     title = book2.get()
     author = book3.get()
@@ -53,5 +53,7 @@ def bookRegister(book1, book2, book3, book4):
     print(title)
     print(author)
     print(status)
+
+    root.destroy()
 
     
