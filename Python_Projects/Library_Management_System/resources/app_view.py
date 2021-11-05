@@ -4,10 +4,9 @@ def createRoot(title="Hello", minsize=(), geometry="500x500"):
     root = Tk()
     root.title(title)
     root.minsize(width=minsize[0], height=minsize[1])
-    root.geometry("600x500")
+    root.geometry(geometry)
 
     return root
-
 
 def createCanvas(root, color):
     Canvas1 = Canvas(root)
