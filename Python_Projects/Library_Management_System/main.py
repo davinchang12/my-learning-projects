@@ -19,7 +19,6 @@ CREATE TABLE tblBooksIssued(
 from resources.app_view import *
 from resources.connections import *
 
-from tkinter import messagebox
 from addbook import *
 from deletebook import *
 from viewbook import *
