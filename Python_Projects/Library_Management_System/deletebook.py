@@ -13,7 +13,7 @@ def deleteBook():
     text(labelFrame, 'Book ID:', 0.05, 0.5)
     book1 = entryBox(labelFrame, 0.3, 0.5)
 
-    button(root, "SUBMIT", '#d1ccc0', 'black', 0.18, 0.08, lambda: delete(root, book1), 0.28, 0.9)
+    button(root, "DELETE", '#d1ccc0', 'black', 0.18, 0.08, lambda: delete(root, book1), 0.28, 0.9)
     button(root, "QUIT", '#f7f1e3', 'black', 0.18, 0.08, root.destroy, 0.53, 0.9)
 
     root.mainloop()
