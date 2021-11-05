@@ -58,7 +58,6 @@ def issue(root, book1, book2):
         root.destroy()
         return
     
-    delete_tblBooksIssued = "DELETE FROM tblBooksIssued;"
     addIssue = "INSERT INTO tblBooksIssued VALUES('"+ bid +"', '"+ issueto +"');"
     updateStatus = "UPDATE tblBooks SET status = 'issued' WHERE bid = '" + bid + "';"
     
