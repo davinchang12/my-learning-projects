@@ -3,10 +3,7 @@ from resources.app_view import *
 from resources.connections import *
 
 def viewBook():
-    root = Tk()
-    root.title("Library")
-    root.minsize(width=400, height=400)
-    root.geometry("600x500")
+    root = createRoot("Library", (400, 400), "600x500")
 
     createCanvas(root, "#12a4d9")
 

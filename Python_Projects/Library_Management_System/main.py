@@ -30,10 +30,7 @@ import PIL.Image
 import PIL.ImageTk
 
 
-root = Tk()
-root.title("Library")
-root.minsize(width=400, height=400)
-root.geometry("600x500")
+root = createRoot("Library", (400, 400), "600x500")
 
 same = True
 n = 0.25
